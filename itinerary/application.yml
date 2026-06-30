@@ -2,7 +2,7 @@ spring:
   application:
     name: itinerary
   datasource:
-    url: jdbc:mysql://localhost:3313/itinerary
+    url: jdbc:mysql://localhost:3312/itinerary
     username: examen
     password: examen123
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -15,7 +15,7 @@ spring:
     locations: classpath:db/migration
 
 server:
-  port: 9004
+  port: 9002
 
 eureka:
   client:
