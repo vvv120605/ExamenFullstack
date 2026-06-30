@@ -1,0 +1,19 @@
+#!/bin/sh
+
+if [ -z "$MAVEN_HOME" ]; then
+  MAVEN_HOME="$(dirname "$0")/.."
+fi
+
+if [ -f "$MAVEN_HOME/.mvn/wrapper/maven-wrapper.properties" ]; then
+  . "$MAVEN_HOME/.mvn/wrapper/maven-wrapper.properties"
+fi
+
+if [ -z "$MVNW_REPOURL" ]; then
+  MVNW_REPOURL="https://repo.maven.apache.org/maven2"
+fi
+
+if [ -z "$MVNW_USERNAME" ] || [ -z "$MVNW_PASSWORD" ]; then
+  exec mvn "$@"
+else
+  exec mvn -DrepoUrl="$MVNW_REPOURL" -Dmaven.repo.local="$MAVEN_HOME/.m2" "$@"
+fi
